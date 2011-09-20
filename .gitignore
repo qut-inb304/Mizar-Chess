@@ -39,3 +39,8 @@ _ReSharper*/
 *.lai
 *.la
 *.a
+
+#More Visual Studio Stuff
+*.vcxproj.filters
+*.vcxproj.user
+*.sdf
