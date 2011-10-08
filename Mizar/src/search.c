@@ -8,7 +8,7 @@
 
 #include <mizar.h>
 
-/*La funzione principale del programma che implementa alpha beta*/
+/*The main function of alpha beta program that implements*/
 int search(int alpha, int beta, int depth) {
 
 	int c, score,fscore, legal, old_depth,s=0;
@@ -20,36 +20,36 @@ int search(int alpha, int beta, int depth) {
 	assert(Name(BLACK,0)==king);
 
 
-	/*controlla se andare in quiescenza*/
+	/*controls whether to go dormant*/
 
 	if (depth == HORIZON) {
 			return quiesce(alpha, beta, QDEPTH);
 		}
 
-	/*questo e' un nuovo nodo da cercare*/
+	/*this and 'a new node to search*/
 	Nodes++;
 
-	/*controlla se è tempo di abortire la ricerca*/
+	/*checks whether it is time to abort the search*/
 	if (stop_search()) {
 			tree.abort_search = 1;
 			return 0;
 			}
 
-	/*aggiorna la lunghezza della pv corrente*/
+	/*updates the length of the current pv*/
 	tree.pv_lenght[Ply] = Ply;
 
-	/*controlla se la mossa è una ripetizione*/
+	/*checks whether the move is a repetition*/
 	if (Ply && repetition())
 		return DRAW;
 
-	/*controlla se abbiamo raggiunto i limiti di implementazione*/
+	/*check if we have reached the limits of implementation*/
 	if (Ply >= MAX_PLY - 1)
 		return beta;
 
-	/*siamo sotto scacco?*/
+	/*We are under attack?*/
 	check_condition();
 
-	/*estensioni*/
+	/*extensions*/
 	old_depth = depth;
 
 	/*Stand Pat Score*/

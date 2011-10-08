@@ -269,6 +269,7 @@ void bench() {
 	nps = 0;
 	delta = 0;
 
+	/* Important area for testing */
 	for (c = 0;c < 5;c++) {
 			set_position(p);
 			init_data();

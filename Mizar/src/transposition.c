@@ -6,6 +6,11 @@
 /*                                      */
 /*--------------------------------------*/
 
+/* Note: Transpotion table used to speed up search algorithms eg. */
+/* P-K4....2.P-Q4 puts the board in the same possition if the     */
+/* move P-Q4...p-K4 was made transpoing eradicates the need for   */
+/* running the search again                                       */
+
 #include <mizar.h>
 
 /*Reset iniziale*/
